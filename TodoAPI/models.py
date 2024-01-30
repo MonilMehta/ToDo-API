@@ -9,8 +9,8 @@ class ToDo(models.Model):
     date_created = models.DateField(auto_now_add=True)
 
 class Profile(models.Model):
-    username=models.OneToOneField(User,on_delete=models.CASCADE)
+    user=models.OneToOneField(User,on_delete=models.CASCADE)
     email=models.EmailField(unique=True)
 
     def __str__(self) :
-        return  self.username
+        return  self.user.username

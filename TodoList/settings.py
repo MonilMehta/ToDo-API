@@ -33,10 +33,14 @@ INSTALLED_APPS = [
     "TodoAPI",
     'rest_framework_simplejwt.token_blacklist',
     "corsheaders",
+    
 ]
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': [
         'rest_framework.authentication.TokenAuthentication',
+    ],
+    'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.IsAuthenticated',
     ],
     # other settings...
 }
